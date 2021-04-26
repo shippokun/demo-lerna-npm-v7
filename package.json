@@ -4,11 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test:a && npm run test:b",
+    "test:a": "npm run test:unit --prefix ./apps/project-a",
+    "test:b": "npm run test:unit --prefix ./apps/project-b"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "lerna": "^3.22.1"
-  }
+  },
+  "devDependencies": {
+    "@vue/cli": "^4.5.11"
+  },
+  "workspaces": [
+    "apps/*"
+  ]
 }
